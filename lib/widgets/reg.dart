@@ -9,16 +9,26 @@ class Reg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: 8), child: Container(
-      width: 40,
-      height: 56,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(name, style: GoogleFonts.robotoMono(fontSize: 18),),
-          Text(value != null ? value!.toRadixString(16).padLeft(2, '0').toUpperCase() : '??', style: GoogleFonts.robotoMono(fontSize: 22))
-        ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8),
+      child: Container(
+        width: 120,
+        height: 56,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              name,
+              style: GoogleFonts.robotoMono(fontSize: 18),
+            ),
+            Text(
+                value != null
+                    ? value!.toRadixString(16).padLeft(6, '0').toUpperCase()
+                    : '??',
+                style: GoogleFonts.robotoMono(fontSize: 22))
+          ],
+        ),
       ),
-    ),);
+    );
   }
 }
